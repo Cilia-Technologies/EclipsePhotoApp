@@ -2,6 +2,23 @@
 <html lang="en">
 	<head>
 		<SCRIPT LANGUAGE="JavaScript">
+		function login_validator(form)
+		{
+			if(document.F0.username.value == "")
+			{
+					alert("Enter Username!")
+					document.F1.username.focus()
+					return false
+			}
+			if(document.F0.password.value == "")
+				{
+					alert("Enter Password!")
+					document.F1.password.focus()
+					return false
+				}
+			
+			return true;			
+		}
 		function validate(form)
 		{
 			if(!isNaN(document.F1.phone.value))
@@ -91,18 +108,18 @@
 												</h4>
 												<div class="space-6"></div>
 <!-- User login form -->
-												<form />
+												<form name=F0 method="post" OnSubmit="return login_validator(this)" action="LoginServlet">
 													<fieldset>
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="text" class="span12" placeholder="Username" />
+																<input type="text" name="username" class="span12" placeholder="Username" />
 																<i class="icon-user"></i>
 															</span>
 														</label>
 
 														<label>
 															<span class="block input-icon input-icon-right">
-																<input type="password" class="span12" placeholder="Password" />
+																<input type="password" name="password" class="span12" placeholder="Password" />
 																<i class="icon-lock"></i>
 															</span>
 														</label>
@@ -112,12 +129,12 @@
 														<div class="clearfix">
 															<label class="inline">
 																<input type="checkbox" />
-																<span class="lbl"> Remember Me</span>
+																<span class="lbl"> Remember Me test</span>
 															</label>
 
-															<button onclick="return false;" class="width-35 pull-right btn btn-small btn-primary">
+		  													<button class="width-35 pull-right btn btn-small btn-primary">
 																<i class="icon-key"></i>
-																Login
+																Login1
 															</button>
 														</div>
 
@@ -125,6 +142,7 @@
 													</fieldset>
 												</form>
 
+<!-- user login form ends -->		
 												<div class="social-or-login center">
 													<span class="bigger-110">Or Login Using</span>
 												</div>
