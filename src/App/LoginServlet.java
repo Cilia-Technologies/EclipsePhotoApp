@@ -33,10 +33,10 @@ public class LoginServlet extends HttpServlet {
 		    		rd.forward(request,response);  
 		    	}  
 		    	else{  
-		    		out.write("<html><body><font color = red>Sorry username or password error </font></body></html>");
-		    		request.setAttribute("loginresponse", "Sorry username or password error" );
+	//	    		out.write("<html><body><font color = red>Sorry username or password error </font></body></html>");		    		
+	//	    		request.setAttribute("loginresponse", "Sorry username or password error" );
 		    		RequestDispatcher rd=request.getRequestDispatcher("login.html");  
-		    		rd.include(request,response);  
+		    		rd.forward(request,response);  
 		    	}  
 		    }
 		    else
