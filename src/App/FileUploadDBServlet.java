@@ -50,7 +50,7 @@ public class FileUploadDBServlet extends HttpServlet {
 			inputStream = filePart.getInputStream();
 		}
 		BufferedImage image= ImageIO.read(inputStream);
-		BufferedImage thumbnail = Scalr.resize(image, Scalr.Method.SPEED, Scalr.Mode.FIT_TO_WIDTH,500, 400, Scalr.OP_ANTIALIAS);
+		BufferedImage thumbnail = Scalr.resize(image, Scalr.Method.SPEED, Scalr.Mode.FIT_TO_WIDTH,150, 100, Scalr.OP_ANTIALIAS);
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
         ImageIO.write(thumbnail, "jpg", os);
         cropped_inputstream = new ByteArrayInputStream(os.toByteArray());

@@ -344,7 +344,7 @@
 
 				<ul class="nav nav-list">
 					<li>
-						<a href="gallery.html">
+						<a href="gallery.jsp">
 							<i class="icon-picture"></i>
 							<span class="menu-text"> Gallery </span>
 						</a>
@@ -360,7 +360,7 @@
 
 						<ul class="submenu">
 							<li class="active">
-								<a href="profile.html">
+								<a href="UserProfile.jsp">
 									<i class="icon-double-angle-right"></i>
 									User Profile
 								</a>
