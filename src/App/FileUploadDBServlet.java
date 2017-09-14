@@ -36,7 +36,8 @@ public class FileUploadDBServlet extends HttpServlet {
 		// gets values of text fields
 		String user = request.getParameter("username");		
 		
-		InputStream inputStream = null;	// input stream of the upload file
+		InputStream inputStream = null;
+		InputStream inputStream1 = null;// input stream of the upload file
 		InputStream cropped_inputstream=null;
 		// obtains the upload file part in this multipart request
 		Part filePart = request.getPart("photo");
@@ -48,6 +49,7 @@ public class FileUploadDBServlet extends HttpServlet {
 			
 			// obtains input stream of the upload file
 			inputStream = filePart.getInputStream();
+			inputStream1 = filePart.getInputStream();
 		}
 		BufferedImage image= ImageIO.read(inputStream);
 		BufferedImage thumbnail = Scalr.resize(image, Scalr.Method.SPEED, Scalr.Mode.FIT_TO_WIDTH,150, 100, Scalr.OP_ANTIALIAS);
@@ -76,15 +78,17 @@ public class FileUploadDBServlet extends HttpServlet {
 				// constructs SQL statement
 				String sql = "INSERT INTO photos (user_id,Actual_Photo,Cropped_Photo) values (?, ?, ?)";
 				PreparedStatement statement = conn.prepareStatement(sql);
-				statement.setInt(1, uid);						
-				if (inputStream != null) {
-					// fetches input stream of the upload file for the blob column
-					statement.setBlob(2, inputStream);
-				}
+				statement.setInt(1, uid);
 				if (thumbnail !=null)
 				{
 					statement.setBlob(3, cropped_inputstream);
 				}
+				if (inputStream != null) {
+					// fetches input stream of the upload file for the blob column
+					statement.setBlob(2, inputStream1);
+					System.out.println("Inputstream"+inputStream);
+				}
+				
 
 			// sends the statement to the database server
 			int row = statement.executeUpdate();

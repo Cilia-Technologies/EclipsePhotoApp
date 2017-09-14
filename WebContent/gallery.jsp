@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" session="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -47,6 +47,15 @@
 <%@ page import="java.io.*"%>
 <%@ page import="App.GetCon"%>
 <%@ page import="java.util.ArrayList"%>
+
+<%
+HttpSession sessionsa = request.getSession(false);
+if(sessionsa==null){
+	out.print("Please login first");  
+    request.getRequestDispatcher("login.html").include(request, response);
+}
+String suser = (String)sessionsa.getAttribute("USER");
+%>
 <div class="navbar">
 			<div class="navbar-inner">
 				<div class="container-fluid">
@@ -99,13 +108,13 @@
 				</div><!--#sidebar-shortcuts-->
 
 				<ul class="nav nav-list">
-					<li>
+<!--  				<li>
 						<a href="index.html">
 							<i class="icon-dashboard"></i>
 							<span class="menu-text"> Dashboard </span>
 						</a>
 					</li>
-
+-->
 
 
 					<li class="active">
@@ -119,7 +128,7 @@
 						
 						<ul class="submenu">
 							<li>
-								<a href="UserProfile.jsp">
+								<a href="UserHomeServlet">
 									<i class="icon-double-angle-right"></i>
 									User Profile
 								</a>
@@ -147,7 +156,7 @@
 					<ul class="breadcrumb">
 						<li>
 							<i class="icon-home home-icon"></i>
-							<a href="#">Home</a>
+							<a href="UserHomeServlet">Home</a>
 
 							<span class="divider">
 								<i class="icon-angle-right arrow-icon"></i>
@@ -185,7 +194,8 @@
 Connection con=GetCon.getCon();
 PreparedStatement ps;
 try {
-	ps = con.prepareStatement("SELECT photo_id FROM photos P INNER JOIN user U ON P.user_id=U.user_id WHERE username='gravitejaa'");
+	ps = con.prepareStatement("SELECT photo_id FROM photos P INNER JOIN user U ON P.user_id=U.user_id WHERE username=?");
+	ps.setString(1,suser);
 	ResultSet rs=ps.executeQuery();
 		while(rs.next())
 		{		
@@ -207,8 +217,10 @@ try {
     <input type="radio" name="radio-btn" id="img-<%= i %>" checked />
   	  <li class="slide-container">
 		<div class="slide">
-		    <span class="btn btn-info btn-small tooltip-info" data-rel="popover" data-placement="bottom" title="Some Info" data-content=" photo is uploading to server.">Download</span>
-			<img src="DisplayImage?ID=<%= photo.get(i) %>"/>			
+		    <span class="btn btn-info btn-small tooltip-info" data-rel="popover" data-placement="bottom" title="Some Info" data-content=" photo is uploading to server.">Click on Image to Download</span>
+			<a href="DownloadImage?DN=<%= photo.get(i) %>">
+			<img src="DisplayImage?ID=<%= photo.get(i) %>"/>
+			</a>			
         </div>
 		<div class="nav">
 		<% 
