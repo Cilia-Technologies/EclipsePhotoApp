@@ -2,9 +2,9 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Pricing Tables - Super Admin</title>
+		<title>Admin</title>
 
-		<meta name="description" content="Large &amp; Small" />
+		<meta name="description" content="Static &amp; Dynamic Tables" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!--basic styles-->
@@ -43,7 +43,7 @@
 					<a href="#" class="brand">
 						<small>
 							<i class="icon-leaf"></i>
-							PHOTO App
+							Super Admin
 						</small>
 					</a><!--/.brand-->
 
@@ -336,43 +336,23 @@
 
 				<ul class="nav nav-list">
 					<li>
-						<a href="gallery.jsp">
-							<i class="icon-picture"></i>
-							<span class="menu-text"> Gallery </span>
+						<a href="admin.html">
+							<i class="icon-dashboard"></i>
+							<span class="menu-text"> Dashboard </span>
 						</a>
 					</li>
-					
 
 					
-							<li >
-								<a href="UserHomeServlet">
-									<i class="icon-double-angle-right"></i>
-									User Profile
-								</a>
-							</li>
 
-							
-						
-						<li  class="active">
-								<a href="#">
-									<i class="icon-double-angle-right"></i>
-									Wallet Amount
-								</a>
-							</li>
-							<li>
-						<a href="#">
-							<i class="icon-picture"></i>
-							<span class="menu-text"> Notification </span>
+					<li class="active">
+						<a href="/PhotoApp/userlist">
+							<i class="icon-list"></i>
+							<span class="menu-text"> USERS </span>
 						</a>
 					</li>
+
 					
-                     <li>
-						<a href="#">
-							<i class="icon-picture"></i>
-							<span class="menu-text"> FAQ </span>
-						</a>
-					</li>
-					
+
 				</ul><!--/.nav-list-->
 
 				<div class="sidebar-collapse" id="sidebar-collapse">
@@ -391,15 +371,7 @@
 								<i class="icon-angle-right arrow-icon"></i>
 							</span>
 						</li>
-
-						<li>
-							<a href="#">More Pages</a>
-
-							<span class="divider">
-								<i class="icon-angle-right arrow-icon"></i>
-							</span>
-						</li>
-						<li class="active">Pricing Tables</li>
+						<li class="active">Tables</li>
 					</ul><!--.breadcrumb-->
 
 					<div class="nav-search" id="nav-search">
@@ -415,185 +387,242 @@
 				<div class="page-content">
 					<div class="page-header position-relative">
 						<h1>
-							WALLET AMOUNT
+							Tables
 							<small>
-								<i class="icon-double-angle-right">
-								 340.00</i>
-							  
+								<i class="icon-double-angle-right"></i>
+								Users List
 							</small>
 						</h1>
 					</div><!--/.page-header-->
-					
 
 					<div class="row-fluid">
 						<div class="span12">
 							<!--PAGE CONTENT BEGINS-->
 
+							
+							
+
 							<div class="row-fluid">
-								<div class="span3">
-									<div class="widget-box pricing-box">
-										<div class="widget-header header-color-dark">
-											<h5 class="bigger lighter">PAYTM</h5>
-										</div>
-
-										<div class="widget-body">
-											<div class="widget-main">
-												<ul class="unstyled spaced2">
-													
-
-													<span class="profile-picture">
-														<img id="avatar" class="editable" alt="Alex's Avatar" src="assets/avatars/profile-pic.jpg" />
-											        </span>
-                                                   <br>
-                                                   <br>
-                                                    
-                                                    
-                                                    <h5 style="font-weight:14px" > Enter mobile number </h5>
-                                                    <p style="font-size:20px;padding-left:20%;">9448658140 </p>
-                                                    
-													<div class="control-group">
-													<label class="control-label" for="form-field-1">Transaction ID</label>
-
-														<div class="controls">
-															<input type="text" id="form-field-1" placeholder="" />
-									 					</div>
-													</div>
-													
-								
-												</ul>
-
-												
-											</div>
-
-											<div>
-												<button class="btn btn-primary" id="gritter-center">Center</button>
-											</div>
-										</div>
-									</div>
+								<h3 class="header smaller lighter blue">Users Table</h3>
+								<div class="table-header">
+									Results for "Latest Registered users"
 								</div>
 
-								<div class="span3">
-									<div class="widget-box pricing-box">
-										<div class="widget-header header-color-orange">
-											<h5 class="bigger lighter">CASH RECHARGE SPOT</h5>
-										</div>
+								<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+									<thead>
+										<tr>
+											<th class="center">
+												<label>
+													<input type="checkbox" />
+													<span class="lbl"></span>
+												</label>
+											</th>
+											<th>User Name</th>
+											<th>NO of Photoes</th>
+											<th class="hidden-480">Visits</th>
 
-										<div class="widget-body">
-											<div class="widget-main">
-												<ul class="unstyled spaced2">
-													<li>
-														<i class="icon-ok green"></i>
-														Jayanagar 9th block canteen
-													</li>
+											<th class="hidden-phone">
+												<i class="icon-time bigger-110 hidden-phone"></i>
+												Update
+											</th>
+											<th class="hidden-480">Status</th>
 
-													<li>
-														<i class="icon-ok green"></i>
-														CMS lalbhag road canteen
-													</li>
+											<th></th>
+										</tr>
+									</thead>
 
-													<li>
-														<i class="icon-ok green"></i>
-														JC road canteen
+									<tbody>
+									
+									
+									
+										<tr>
+											<td class="center">
+												<label>
+													<input type="checkbox" />
+													<span class="lbl"></span>
+												</label>
+											</td>
+
+											<td>
+												<a href="#">app.com</a>
+											</td>
+											<td>45</td>
+											<td class="hidden-480">3,330</td>
+											<td class="hidden-phone">Feb 12</td>
+
+											<td class="hidden-480">
+												<span class="label label-warning">Expiring</span>
+											</td>
+
+											<td class="td-actions">
+												<div class="hidden-phone visible-desktop action-buttons">
+													<a class="blue" href="#">
+														<i class="icon-zoom-in bigger-130"></i>
+													</a>
+
+													<a class="green" href="#">
+														<i class="icon-pencil bigger-130"></i>
+													</a>
+
+													<a class="red" href="#">
+														<i class="icon-trash bigger-130"></i>
+													</a>
+												</div>
+
+												<div class="hidden-desktop visible-phone">
+													<div class="inline position-relative">
+														<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown">
+															<i class="icon-caret-down icon-only bigger-120"></i>
+														</button>
+
+														<ul class="dropdown-menu dropdown-icon-only dropdown-yellow pull-right dropdown-caret dropdown-close">
+															<li>
+																<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																	<span class="blue">
+																		<i class="icon-zoom-in bigger-120"></i>
+																	</span>
+																</a>
+															</li>
+
+															<li>
+																<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+																	<span class="green">
+																		<i class="icon-edit bigger-120"></i>
+																	</span>
+																</a>
+															</li>
+
+															<li>
+																<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																	<span class="red">
+																		<i class="icon-trash bigger-120"></i>
+																	</span>
+																</a>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</td>
+										</tr>
+
 										
-																									</ul>
-
-												
-											</div>
-
-											
-										</div>
-									</div>
-								</div>
-
-								<div class="span3">
-									<div class="widget-box pricing-box">
-										<div class="widget-header header-color-blue">
-											<h5 class="bigger lighter">ONLINE BANKING</h5>
-										</div>
-
-										<div class="widget-body">
-											<div class="widget-main">
-												<ul class="unstyled spaced2">
-													<li>
-														<i class="icon-ok green"></i>
-														DEBIT CARD
-													</li>
-
-													<li>
-														<i class="icon-ok green"></i>
-														CREDIT CARD
-													</li>
-
-													<li>
-														<i class="icon-ok green"></i>
-														NETBANKING
-													</li>
-
-																									</ul>
-
-												
-												
-											</div>
-
-											<div>
-												<a href="#" class="btn btn-block btn-primary">
-													<span>UP COMING</span>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<div class="span3">
-									<div class="widget-box pricing-box">
-										<div class="widget-header header-color-green">
-											<h5 class="bigger lighter">TRANSFER AMOUNT</h5>
-										</div>
-
-										<div class="widget-body">
-											<div class="widget-main">
-												<ul class="unstyled spaced2">
-													<div class="control-group">
-													<label class="control-label" for="form-field-1">USER ID</label>
-
-														<div class="controls">
-															<input type="text" id="form-field-1" placeholder="" />
-									 					</div>
-													</div>
-													<div class="control-group">
-													<label class="control-label" for="form-field-1">USER NAME</label>
-
-														<div class="controls">
-															<input type="text" id="form-field-1" placeholder="" />
-									 					</div>
-													</div>
-													<div class="control-group">
-													<label class="control-label" for="form-field-1">AMOUNT</label>
-
-														<div class="controls">
-															<input type="text" id="form-field-1" placeholder="" />
-									 					</div>
-													</div>
-													
-
-						
-												</ul>
-
-												
-												
-											</div>
-
-											<div>
-												<a href="#" class="btn btn-block btn-success">
-													<span>NEXT</span>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
+										
+									</tbody>
+								</table>
 							</div>
 
-											</div><!--/.page-content-->
+							<div id="modal-table" class="modal hide fade" tabindex="-1">
+								<div class="modal-header no-padding">
+									<div class="table-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										Results for "Latest Registered Domains"
+									</div>
+								</div>
+
+								<div class="modal-body no-padding">
+									<div class="row-fluid">
+										<table class="table table-striped table-bordered table-hover no-margin-bottom no-border-top">
+											<thead>
+												<tr>
+													<th>Domain</th>
+													<th>Price</th>
+													<th>Clicks</th>
+
+													<th>
+														<i class="icon-time bigger-110"></i>
+														Update
+													</th>
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td>
+														<a href="#">ace.com</a>
+													</td>
+													<td>$45</td>
+													<td>3,330</td>
+													<td>Feb 12</td>
+												</tr>
+
+												<tr>
+													<td>
+														<a href="#">base.com</a>
+													</td>
+													<td>$35</td>
+													<td>2,595</td>
+													<td>Feb 18</td>
+												</tr>
+
+												<tr>
+													<td>
+														<a href="#">max.com</a>
+													</td>
+													<td>$60</td>
+													<td>4,400</td>
+													<td>Mar 11</td>
+												</tr>
+
+												<tr>
+													<td>
+														<a href="#">best.com</a>
+													</td>
+													<td>$75</td>
+													<td>6,500</td>
+													<td>Apr 03</td>
+												</tr>
+
+												<tr>
+													<td>
+														<a href="#">pro.com</a>
+													</td>
+													<td>$55</td>
+													<td>4,250</td>
+													<td>Jan 21</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+
+								<div class="modal-footer">
+									<button class="btn btn-small btn-danger pull-left" data-dismiss="modal">
+										<i class="icon-remove"></i>
+										Close
+									</button>
+
+									<div class="pagination pull-right no-margin">
+										<ul>
+											<li class="prev disabled">
+												<a href="#">
+													<i class="icon-double-angle-left"></i>
+												</a>
+											</li>
+
+											<li class="active">
+												<a href="#">1</a>
+											</li>
+
+											<li>
+												<a href="#">2</a>
+											</li>
+
+											<li>
+												<a href="#">3</a>
+											</li>
+
+											<li class="next">
+												<a href="#">
+													<i class="icon-double-angle-right"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div><!--PAGE CONTENT ENDS-->
+						</div><!--/.span-->
+					</div><!--/.row-fluid-->
+				</div><!--/.page-content-->
 
 				<div class="ace-settings-container" id="ace-settings-container">
 					<div class="btn btn-app btn-mini btn-warning ace-settings-btn" id="ace-settings-btn">
@@ -659,243 +688,6 @@
 			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
 		</script>
 
-<script type="text/javascript">
-$(function(){
-	<script type="text/javascript">
-	$(function() {
-	
-		$('#accordion2').on('hide', function (e) {
-			$(e.target).prev().children(0).addClass('collapsed');
-		})
-		$('#accordion2').on('hidden', function (e) {
-			$(e.target).prev().children(0).addClass('collapsed');
-		})
-		$('#accordion2').on('show', function (e) {
-			$(e.target).prev().children(0).removeClass('collapsed');
-		})
-		$('#accordion2').on('shown', function (e) {
-			$(e.target).prev().children(0).removeClass('collapsed');
-		})
-	
-	
-		var oldie = /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase());
-		$('.easy-pie-chart.percentage').each(function(){
-			$(this).easyPieChart({
-				barColor: $(this).data('color'),
-				trackColor: '#EEEEEE',
-				scaleColor: false,
-				lineCap: 'butt',
-				lineWidth: 8,
-				animate: oldie ? false : 1000,
-				size:75
-			}).css('color', $(this).data('color'));
-		});
-	
-		$('[data-rel=tooltip]').tooltip();
-		$('[data-rel=popover]').popover({html:true});
-	
-	
-		$('#gritter-regular').on(ace.click_event, function(){
-			$.gritter.add({
-				title: 'This is a regular notice!',
-				text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="blue">magnis dis parturient</a> montes, nascetur ridiculus mus.',
-				image: $assets+'/avatars/avatar1.png',
-				sticky: false,
-				time: '',
-				class_name: (!$('#gritter-light').get(0).checked ? 'gritter-light' : '')
-			});
-	
-			return false;
-		});
-	
-		$('#gritter-sticky').on(ace.click_event, function(){
-			var unique_id = $.gritter.add({
-				title: 'This is a sticky notice!',
-				text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="red">magnis dis parturient</a> montes, nascetur ridiculus mus.',
-				image: $assets+'/avatars/avatar.png',
-				sticky: true,
-				time: '',
-				class_name: 'gritter-info' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
-			});
-	
-			return false;
-		});
-	
-	
-		$('#gritter-without-image').on(ace.click_event, function(){
-			$.gritter.add({
-				// (string | mandatory) the heading of the notification
-				title: 'This is a notice without an image!',
-				// (string | mandatory) the text inside the notification
-				text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="orange">magnis dis parturient</a> montes, nascetur ridiculus mus.',
-				class_name: 'gritter-success' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
-			});
-	
-			return false;
-		});
-	
-	
-		$('#gritter-max3').on(ace.click_event, function(){
-			$.gritter.add({
-				title: 'This is a notice with a max of 3 on screen at one time!',
-				text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="green">magnis dis parturient</a> montes, nascetur ridiculus mus.',
-				image: $assets+'/avatars/avatar3.png',
-				sticky: false,
-				before_open: function(){
-					if($('.gritter-item-wrapper').length >= 3)
-					{
-						return false;
-					}
-				},
-				class_name: 'gritter-warning' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
-			});
-	
-			return false;
-		});
-	
-	
-		$('#gritter-center').on(ace.click_event, function(){
-			$.gritter.add({
-				title: 'This is a centered notification',
-				text: 'Just add a "gritter-center" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
-				class_name: 'gritter-info gritter-center' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
-			});
-	
-			return false;
-		});
-		
-		$('#gritter-error').on(ace.click_event, function(){
-			$.gritter.add({
-				title: 'This is a warning notification',
-				text: 'Just add a "gritter-light" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
-				class_name: 'gritter-error' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
-			});
-	
-			return false;
-		});
-			
-	
-		$("#gritter-remove").on(ace.click_event, function(){
-			$.gritter.removeAll();
-			return false;
-		});
-			
-	
-		///////
-	
-	
-		$("#bootbox-regular").on(ace.click_event, function() {
-			bootbox.prompt("What is your name?", function(result) {
-				if (result === null) {
-					//Example.show("Prompt dismissed");
-				} else {
-					//Example.show("Hi <b>"+result+"</b>");
-				}
-			});
-		});
-			
-		$("#bootbox-confirm").on(ace.click_event, function() {
-			bootbox.confirm("Are you sure?", function(result) {
-				if(result) {
-					bootbox.alert("You are sure!");
-				}
-			});
-		});
-			
-		$("#bootbox-options").on(ace.click_event, function() {
-			bootbox.dialog("I am a custom dialog with smaller buttons", [{
-				"label" : "Success!",
-				"class" : "btn-small btn-success",
-				"callback": function() {
-					//Example.show("great success");
-				}
-				}, {
-				"label" : "Danger!",
-				"class" : "btn-small btn-danger",
-				"callback": function() {
-					//Example.show("uh oh, look out!");
-				}
-				}, {
-				"label" : "Click ME!",
-				"class" : "btn-small btn-primary",
-				"callback": function() {
-					//Example.show("Primary button");
-				}
-				}, {
-				"label" : "Just a button...",
-				"class" : "btn-small"
-				}]
-			);
-		});
-	
-	
-	
-		$('#spinner-opts small').css({display:'inline-block', width:'60px'})
-	
-		var slide_styles = ['', 'green','red','purple','orange', 'dark'];
-		var ii = 0;
-		$("#spinner-opts input[type=text]").each(function() {
-			var $this = $(this);
-			$this.hide().after('<span />');
-			$this.next().addClass('ui-slider-small').
-			addClass("inline ui-slider-"+slide_styles[ii++ % slide_styles.length]).
-			css({'width':'125px'}).slider({
-				value:parseInt($this.val()),
-				range: "min",
-				animate:true,
-				min: parseInt($this.data('min')),
-				max: parseInt($this.data('max')),
-				step: parseFloat($this.data('step')),
-				slide: function( event, ui ) {
-					$this.attr('value', ui.value);
-					spinner_update();
-				}
-			});
-		});
-	
-	
-	
-	
-	
-		$.fn.spin = function(opts) {
-			this.each(function() {
-			  var $this = $(this),
-				  data = $this.data();
-	
-			  if (data.spinner) {
-				data.spinner.stop();
-				delete data.spinner;
-			  }
-			  if (opts !== false) {
-				data.spinner = new Spinner($.extend({color: $this.css('color')}, opts)).spin(this);
-			  }
-			});
-			return this;
-		};
-	
-		function spinner_update() {
-			var opts = {};
-			$('#spinner-opts input[type=text]').each(function() {
-				opts[this.name] = parseFloat(this.value);
-			});
-			$('#spinner-preview').spin(opts);
-		}
-	
-	
-	
-		$('#id-pills-stacked').removeAttr('checked').on('click', function(){
-			$('.nav-pills').toggleClass('nav-stacked');
-		});
-	
-	
-	});
-</script>
-
-}
-</script>
-
-</script>
-
 		<!--<![endif]-->
 
 		<!--[if IE]>
@@ -911,11 +703,51 @@ $(function(){
 
 		<!--page specific plugin scripts-->
 
+		<script src="assets/js/jquery.dataTables.min.js"></script>
+		<script src="assets/js/jquery.dataTables.bootstrap.js"></script>
+
 		<!--ace scripts-->
 
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
 
 		<!--inline scripts related to this page-->
+
+		<script type="text/javascript">
+			$(function() {
+				var oTable1 = $('#sample-table-2').dataTable( {
+				"aoColumns": [
+			      { "bSortable": false },
+			      null, null,null, null, null,
+				  { "bSortable": false }
+				] } );
+				
+				
+				$('table th input:checkbox').on('click' , function(){
+					var that = this;
+					$(this).closest('table').find('tr > td:first-child input:checkbox')
+					.each(function(){
+						this.checked = that.checked;
+						$(this).closest('tr').toggleClass('selected');
+					});
+						
+				});
+			
+			
+				$('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
+				function tooltip_placement(context, source) {
+					var $source = $(source);
+					var $parent = $source.closest('table')
+					var off1 = $parent.offset();
+					var w1 = $parent.width();
+			
+					var off2 = $source.offset();
+					var w2 = $source.width();
+			
+					if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
+					return 'left';
+				}
+			})
+		</script>
 	</body>
 </html>

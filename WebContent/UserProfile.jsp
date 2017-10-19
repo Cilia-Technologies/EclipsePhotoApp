@@ -51,7 +51,7 @@
 					<a href="#" class="brand">
 						<small>
 							<i class="icon-leaf"></i>
-							PHOTO App
+							LANGOORLENS
 						</small>
 					</a><!--/.brand-->
 
@@ -61,9 +61,9 @@
 								<i class="icon-tasks"></i>
 								<span class="badge badge-grey">4</span>
 							</a>
--->
+
   							<ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-closer">
-<!--								<li class="nav-header">
+								<li class="nav-header">
 									<i class="icon-ok"></i>
 									4 Tasks to complete
 								</li>
@@ -129,7 +129,7 @@
 							</ul>
 						</li>
 -->
-						<li class="purple">
+<!-- 				<li class="purple">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="icon-bell-alt icon-animated-bell"></i>
 								<span class="badge badge-important">8</span>
@@ -192,8 +192,8 @@
 								</li>
 							</ul>
 						</li>
-
-						<li class="green">
+-->
+<!--  	 				<li class="green">
 							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
 								<i class="icon-envelope icon-animated-vertical"></i>
 								<span class="badge badge-success">5</span>
@@ -264,10 +264,10 @@
 								</li>
 							</ul>
 						</li>
-
+-->
 						<li class="light-blue">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
+<!-- 							<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />  -->
 								<span class="user-info">
 									<small>Welcome,</small>
 									Jason
@@ -277,7 +277,7 @@
 							</a>
 
 							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
-								<li>
+<!--  								<li>
 									<a href="#">
 										<i class="icon-cog"></i>
 										Settings
@@ -292,9 +292,9 @@
 								</li>
 
 								<li class="divider"></li>
-
+-->
 								<li>
-									<a href="#">
+									<a href="<%=request.getContextPath()%>/LogoutServlet">
 										<i class="icon-off"></i>
 										Logout
 									</a>
@@ -349,16 +349,9 @@
 							<span class="menu-text"> Gallery </span>
 						</a>
 					</li>
+					
 
-					<li class="active open">
-						<a href="#" class="dropdown-toggle">
-							<i class="icon-tag"></i>
-							<span class="menu-text"> More Pages </span>
-
-							<b class="arrow icon-angle-down"></b>
-						</a>
-
-						<ul class="submenu">
+					
 							<li class="active">
 								<a href="UserHomeServlet">
 									<i class="icon-double-angle-right"></i>
@@ -366,15 +359,27 @@
 								</a>
 							</li>
 
-							<li>
-								<a href="#">
+							
+						
+						<li>
+								<a href="pricing.html">
 									<i class="icon-double-angle-right"></i>
 									Wallet Amount
 								</a>
 							</li>
-						</ul>
+							<li>
+						<a href="#">
+							<i class="icon-picture"></i>
+							<span class="menu-text"> GALLERY2 </span>
+						</a>
 					</li>
-
+					
+                     <li>
+						<a href="#">
+							<i class="icon-picture"></i>
+							<span class="menu-text"> FAQ </span>
+						</a>
+					</li>
 					
 				</ul><!--/.nav-list-->
 			</div>
@@ -394,6 +399,11 @@
 							User Profile Page							
 						</h1>
 					</div><!--/.page-header-->
+					
+					
+					<span class="profile-picture">
+												<img id="avatar" class="editable" alt="Alex's Avatar" src="assets/avatars/profile-pic.jpg" />
+											</span>
 
 					<div class="row-fluid">
 						<div class="span12">
@@ -402,6 +412,8 @@
 
 							<div class="hr dotted"></div>							
 										<div class="profile-user-info profile-user-info-striped">
+																																
+											
 											<div class="profile-info-row">
 												<div class="profile-info-name"> Username </div>
 
@@ -409,6 +421,14 @@
 													<span class="editable" id="username">${user}</span>
 												</div>
 											</div>
+											<div class="profile-info-row">
+												<div class="profile-info-name"> User Id </div>
+
+												<div class="profile-info-value">
+													<span class="editable" id="username">123</span>
+												</div>
+											</div>
+											
 
 											<div class="profile-info-row">
 												<div class="profile-info-name"> Email </div>
@@ -440,7 +460,36 @@
 												<div class="profile-info-value">
 													<span class="editable" id="college">${college}</span>
 												</div>
+												
+												
+												<div class="profile-info-row">
+												<div class="profile-info-name"> Designation </div>
+
+												<div class="profile-info-value">
+													<span class="editable" id="username">Student</span>
+												</div>
 											</div>
+												
+												
+											</div>
+											
+												<div class="profile-info-row">
+												<div class="profile-info-name"> Cource </div>
+
+												<div class="profile-info-value">
+													<span class="editable" id="username">CSE</span>
+												</div>
+											</div>
+																						
+											
+												<div class="profile-info-row">
+												<div class="profile-info-name"> Year </div>
+
+												<div class="profile-info-value">
+													<span class="editable" id="username">20016-2018</span>
+												</div>
+											</div>
+											
 
 											<div class="profile-info-row">
 												<div class="profile-info-name"> Wallet </div>
@@ -449,10 +498,265 @@
 													<span class="editable" id="wallet">${wallet}</span>
 												</div>
 											</div>
+											<div class="profile-info-row">
+												
+									<div class="clearfix">
+									
+									
 										</div>
+												
+											</div>
+										</div>
+										</div>
+									
+									
+									<div id="user-profile-3" class="user-profile row-fluid">
+									<div class="offset1 span10">
+										<div class="well well-small">
+											<button type="button" class="close" data-dismiss="alert">&times;</button>
+											&nbsp;
+											<div class="inline middle blue bigger-110"> Your profile is 70% complete </div>
 
-										
+											&nbsp; &nbsp; &nbsp;
+											<div style="width:200px;" data-percent="70%" class="inline middle no-margin progress progress-success progress-striped active">
+												<div class="bar" style="width:70%"></div>
+											</div>
+										</div><!--/well-->
+
+										<div class="space"></div>
+
+										<form class="form-horizontal" />
+											<div class="tabbable">
+												<ul class="nav nav-tabs padding-16">
+													<li class="active">
+														<a data-toggle="tab" href="#edit-basic">
+															<i class="green icon-edit bigger-125"></i>
+															Basic Info
+														</a>
+													</li>
+
+													<li>
+														<a data-toggle="tab" href="#edit-settings">
+															<i class="purple icon-cog bigger-125"></i>
+															Rights
+														</a>
+													</li>
+
+													<li>
+														<a data-toggle="tab" href="#edit-password">
+															<i class="blue icon-key bigger-125"></i>
+															Password
+														</a>
+													</li>
+												</ul>
+
+												<div class="tab-content profile-edit-tab-content">
+													<div id="edit-basic" class="tab-pane in active">
+														<h4 class="header blue bolder smaller">General</h4>
+
+														<div class="row-fluid">
+															<div class="span4">
+																<input type="file" />
+															</div>
+
+															<div class="vspace"></div>
+
+															<div class="span8">
+																<div class="control-group">
+																	<label class="control-label" for="form-field-username">Username</label>
+
+																	<div class="controls">
+																		<input type="text" id="form-field-username" placeholder="Username" value="" />
+																	</div>
+																</div>
+
+																											</div>
+														</div>
+
+														<hr />
+														<div class="control-group">
+															<label class="control-label" for="form-field-date">Birth Date</label>
+
+															<div class="controls">
+																<div class="input-append">
+																	<input class="input-small date-picker" id="form-field-date" type="text" data-date-format="dd-mm-yyyy" placeholder="dd-mm-yyyy" />
+																	<span class="add-on">
+																		<i class="icon-calendar"></i>
+																	</span>
+																</div>
+															</div>
+														</div>
+
+														<div class="control-group">
+															<label class="control-label">Gender</label>
+
+															<div class="controls">
+																<div class="space-2"></div>
+
+																<label class="inline">
+																	<input name="form-field-radio" type="radio" />
+																	<span class="lbl"> Male</span>
+																</label>
+
+																&nbsp; &nbsp; &nbsp;
+																<label class="inline">
+																	<input name="form-field-radio" type="radio" />
+																	<span class="lbl"> Female</span>
+																</label>
+															</div>
+														</div>
+
+														<div class="space"></div>
+														<h4 class="header blue bolder smaller">Upload ID Proof</h4>
+														<div class="row-fluid">
+															<div class="span4">
+																<input type="file" />
+															</div>
+
+															<div class="vspace"></div>
+
+															<div class="span8">
+																<div class="control-group">
+																	<label class="control-label" for="form-field-username">Type Of ID</label>
+
+																	<div class="controls">
+																		<input type="text" id="form-field-username" style="width:320px" placeholder="AADHAR / VOTERID / DL / PASSPORT / PAN" value="" />
+																	</div>
+																</div>
+
+																											</div>
+														</div>
+														
+														<div class="space"></div>
+														<h4 class="header blue bolder smaller">Contact</h4>
+
+														<div class="control-group">
+															<label class="control-label" for="form-field-email">Email</label>
+
+															<div class="controls">
+																<span class="input-icon input-icon-right">
+																	<input type="email" id="form-field-email" value="alexdoe@gmail.com" />
+																	<i class="icon-envelope"></i>
+																</span>
+															</div>
+														</div>
+
+
+														<div class="control-group">
+															<label class="control-label" for="form-field-phone">Phone</label>
+
+															<div class="controls">
+																<span class="input-icon input-icon-right">
+																	<input class="" type="text" id="form-field-phone" />
+																	<i class="icon-phone icon-flip-horizontal"></i>
+																</span>
+															</div>
+														</div>
+
+														<div class="space"></div>
+														<h4 class="header blue bolder smaller">Social</h4>
+
+														<div class="control-group">
+															<label class="control-label" for="form-field-facebook">Facebook</label>
+
+															<div class="controls">
+																<span class="input-icon">
+																	<input type="text" value="facebook_alexdoe" id="form-field-facebook" />
+																	<i class="icon-facebook"></i>
+																</span>
+															</div>
+														</div>
+
+														
+
+														
+													</div>
+
+													<div id="edit-settings" class="tab-pane">
+														<div class="space-10"></div>
+
+														<div>
+															<label class="inline">
+																<input type="checkbox" name="form-field-checkbox" />
+																<span class="lbl"> Share my photos with Institution </span>
+															</label>
+														</div>
+
+														<div class="space-8"></div>
+
+														<div>
+															<label class="inline">
+																<input type="checkbox" name="form-field-checkbox" />
+																<span class="lbl"> Interested in Edited Photos</span>
+															</label>
+														</div>
+
+														<div class="space-8"></div>
+                                                       
+														<div>
+															<label class="inline">
+																<input type="checkbox" name="form-field-checkbox" />
+																<span class="lbl"> Interested in my portrait painting </span>
+															</label>
+														</div>
 																
+														<div class="space-8"></div>
+														<div>
+															<label class="inline">
+																<input type="checkbox" name="form-field-checkbox" />
+																<span class="lbl"> Allow others to Gift me </span>
+															</label>
+														</div>											</div>
+
+													<div id="edit-password" class="tab-pane">
+														<div class="space-10"></div>
+
+														<div class="control-group">
+															<label class="control-label" for="form-field-pass1">New Password</label>
+
+															<div class="controls">
+																<input type="password" id="form-field-pass1" />
+															</div>
+														</div>
+
+														<div class="control-group">
+															<label class="control-label" for="form-field-pass2">Confirm Password</label>
+
+															<div class="controls">
+																<input type="password" id="form-field-pass2" />
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="form-actions">
+												<button class="btn btn-info" type="button">
+													<i class="icon-ok bigger-110"></i>
+													Save
+												</button>
+
+												&nbsp; &nbsp; &nbsp;
+												<button class="btn" type="reset">
+													<i class="icon-undo bigger-110"></i>
+													Reset
+												</button>
+											</div>
+										</form>
+									</div><!--/span-->
+								</div><!--/user-profile-->
+								
+								
+										
+                                          <br>
+                                          <br>
+                                         
+                                 
+                                 
+                                 
+                                 
+                                 
+                                          
 
 							<div class="hide">
 								<div id="user-profile-2" class="user-profile row-fluid">
@@ -2321,7 +2625,7 @@
 				$('#user-profile-3')
 				.find('input[type=file]').ace_file_input({
 					style:'well',
-					btn_choose:'Change avatar',
+					btn_choose:'Upload Image',
 					btn_change:null,
 					no_icon:'icon-picture',
 					thumbnail:'large',

@@ -49,7 +49,7 @@ public class DownloadImage extends HttpServlet {
 	    else{
 		try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/PhotoApp","root","mysql");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/PhotoApp","root","password");
             String userHome = System.getProperty("user.home");
  //           System.out.println("Home directory="+userHome);
             File file = new File(userHome+"/Downloads/" + "Image" + PhotoId + ".jpg"); 

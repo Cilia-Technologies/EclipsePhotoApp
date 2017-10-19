@@ -22,7 +22,13 @@ public class LoginServlet extends HttpServlet {
 		    PrintWriter out = response.getWriter();  
 		          
 		    String u=request.getParameter("username");  
-		    String p=request.getParameter("password");  
+		    String p=request.getParameter("password"); 
+		    
+		    if(u.equals("admin") && p.equals("nutri"))
+		    {
+		    	RequestDispatcher rd1=request.getRequestDispatcher("userlist");
+		    	rd1.forward(request,response); 
+		    }
 		    
 		    if(LoginDao.validateUser(u)){
 		    

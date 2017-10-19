@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Pricing Tables - Super Admin</title>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta charset="utf-8" />
+		<title>Gallery - super Admin</title>
 
-		<meta name="description" content="Large &amp; Small" />
+		<meta name="description" content="responsive photo gallery using colorbox" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!--basic styles-->
@@ -12,12 +14,15 @@
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="assets/css/style.css" />
 
 		<!--[if IE 7]>
 		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
 		<![endif]-->
 
 		<!--page specific plugin styles-->
+
+		<link rel="stylesheet" href="assets/css/colorbox.css" />
 
 		<!--fonts-->
 
@@ -34,10 +39,15 @@
 		<![endif]-->
 
 		<!--inline styles related to this page-->
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
 
-	<body>
-		<div class="navbar">
+<%@ page import="java.sql.*"%>
+<%@ page import="java.io.*"%>
+<%@ page import="App.GetCon"%>
+<%@ page import="java.util.ArrayList"%>
+<div class="navbar">
 			<div class="navbar-inner">
 				<div class="container-fluid">
 					<a href="#" class="brand">
@@ -336,42 +346,63 @@
 
 				<ul class="nav nav-list">
 					<li>
+						<a href="index.html">
+							<i class="icon-dashboard"></i>
+							<span class="menu-text"> Dashboard </span>
+						</a>
+					</li>
+
+
+
+					<li>
+						<a href="calendar.html">
+							<i class="icon-calendar"></i>
+
+							<span class="menu-text">
+								Calendar
+								<span class="badge badge-transparent tooltip-error" title="2&nbsp;Important&nbsp;Events">
+									<i class="icon-warning-sign red bigger-130"></i>
+								</span>
+							</span>
+						</a>
+					</li>
+
+					<li class="active">
 						<a href="gallery.jsp">
 							<i class="icon-picture"></i>
 							<span class="menu-text"> Gallery </span>
 						</a>
 					</li>
-					
 
-					
-							<li >
-								<a href="UserHomeServlet">
+					<li>
+						<a href="#" class="dropdown-toggle">
+							<i class="icon-tag"></i>
+							<span class="menu-text"> More Pages </span>
+
+							<b class="arrow icon-angle-down"></b>
+						</a>
+
+						<ul class="submenu">
+							<li>
+								<a href="UserProfile.jsp">
 									<i class="icon-double-angle-right"></i>
 									User Profile
 								</a>
 							</li>
 
 							
-						
-						<li  class="active">
-								<a href="#">
+
+							
+
+							<li>
+								<a href="login.html">
 									<i class="icon-double-angle-right"></i>
-									Wallet Amount
+									Login &amp; Register
 								</a>
 							</li>
-							<li>
-						<a href="#">
-							<i class="icon-picture"></i>
-							<span class="menu-text"> Notification </span>
-						</a>
+						</ul>
 					</li>
-					
-                     <li>
-						<a href="#">
-							<i class="icon-picture"></i>
-							<span class="menu-text"> FAQ </span>
-						</a>
-					</li>
+
 					
 				</ul><!--/.nav-list-->
 
@@ -391,15 +422,7 @@
 								<i class="icon-angle-right arrow-icon"></i>
 							</span>
 						</li>
-
-						<li>
-							<a href="#">More Pages</a>
-
-							<span class="divider">
-								<i class="icon-angle-right arrow-icon"></i>
-							</span>
-						</li>
-						<li class="active">Pricing Tables</li>
+						<li class="active">Gallery</li>
 					</ul><!--.breadcrumb-->
 
 					<div class="nav-search" id="nav-search">
@@ -415,185 +438,198 @@
 				<div class="page-content">
 					<div class="page-header position-relative">
 						<h1>
-							WALLET AMOUNT
+							Gallery
 							<small>
-								<i class="icon-double-angle-right">
-								 340.00</i>
-							  
+								<i class="icon-double-angle-right"></i>
+								 photo gallery to download
 							</small>
 						</h1>
 					</div><!--/.page-header-->
-					
 
 					<div class="row-fluid">
 						<div class="span12">
 							<!--PAGE CONTENT BEGINS-->
 
-							<div class="row-fluid">
-								<div class="span3">
-									<div class="widget-box pricing-box">
-										<div class="widget-header header-color-dark">
-											<h5 class="bigger lighter">PAYTM</h5>
-										</div>
+							
+				</div><!--/.page-content-->
 
-										<div class="widget-body">
-											<div class="widget-main">
-												<ul class="unstyled spaced2">
-													
 
-													<span class="profile-picture">
-														<img id="avatar" class="editable" alt="Alex's Avatar" src="assets/avatars/profile-pic.jpg" />
-											        </span>
-                                                   <br>
-                                                   <br>
-                                                    
-                                                    
-                                                    <h5 style="font-weight:14px" > Enter mobile number </h5>
-                                                    <p style="font-size:20px;padding-left:20%;">9448658140 </p>
-                                                    
-													<div class="control-group">
-													<label class="control-label" for="form-field-1">Transaction ID</label>
 
-														<div class="controls">
-															<input type="text" id="form-field-1" placeholder="" />
-									 					</div>
-													</div>
-													
-								
-												</ul>
 
-												
-											</div>
 
-											<div>
-												<button class="btn btn-primary" id="gritter-center">Center</button>
-											</div>
-										</div>
-									</div>
-								</div>
 
-								<div class="span3">
-									<div class="widget-box pricing-box">
-										<div class="widget-header header-color-orange">
-											<h5 class="bigger lighter">CASH RECHARGE SPOT</h5>
-										</div>
 
-										<div class="widget-body">
-											<div class="widget-main">
-												<ul class="unstyled spaced2">
-													<li>
-														<i class="icon-ok green"></i>
-														Jayanagar 9th block canteen
-													</li>
 
-													<li>
-														<i class="icon-ok green"></i>
-														CMS lalbhag road canteen
-													</li>
 
-													<li>
-														<i class="icon-ok green"></i>
-														JC road canteen
-										
-																									</ul>
 
-												
-											</div>
 
-											
-										</div>
-									</div>
-								</div>
+                
+ <ul class="slides">
+<!--   
+    <input type="radio" name="radio-btn" id="img-1" checked />
+  	  <li class="slide-container">
+		<div class="slide">
+		    <span class="btn btn-info btn-small tooltip-info" data-rel="popover" data-placement="bottom" title="Some Info" data-content=" photo is uploading to server.">Download</span>
+			<img src="http://farm9.staticflickr.com/8072/8346734966_f9cd7d0941_z.jpg" />
+			
+        </div>
+		<div class="nav">
+			<label for="img-6" class="prev">&#x2039;</label>
+			<label for="img-2" class="next">&#x203a;</label>
+		</div>
+      </li>
 
-								<div class="span3">
-									<div class="widget-box pricing-box">
-										<div class="widget-header header-color-blue">
-											<h5 class="bigger lighter">ONLINE BANKING</h5>
-										</div>
+    <input type="radio" name="radio-btn" id="img-2" />
+      <li class="slide-container">
+        <div class="slide">
+      	   <span class="btn btn-info btn-small tooltip-info" data-rel="popover" data-placement="bottom" title="Some Info" data-content=" photo is uploading to server.">Download</span>
+           <img src="http://farm9.staticflickr.com/8504/8365873811_d32571df3d_z.jpg" />
+        </div>
+		<div class="nav">
+			<label for="img-1" class="prev">&#x2039;</label>
+			<label for="img-3" class="next">&#x203a;</label>
+		</div>
+    </li>
 
-										<div class="widget-body">
-											<div class="widget-main">
-												<ul class="unstyled spaced2">
-													<li>
-														<i class="icon-ok green"></i>
-														DEBIT CARD
-													</li>
+    <input type="radio" name="radio-btn" id="img-3" />
+      <li class="slide-container">
+        <div class="slide">
+      	  <span class="btn btn-info btn-small tooltip-info" data-rel="popover" data-placement="bottom" title="Some Info" data-content=" photo is uploading to server.">Download</span>
+          <img src="http://farm9.staticflickr.com/8068/8250438572_d1a5917072_z.jpg" />
+        </div>
+		<div class="nav">
+			<label for="img-2" class="prev">&#x2039;</label>
+			<label for="img-4" class="next">&#x203a;</label>
+		</div>
+       </li>
 
-													<li>
-														<i class="icon-ok green"></i>
-														CREDIT CARD
-													</li>
+    <input type="radio" name="radio-btn" id="img-4" />
+    	<li class="slide-container">
+        	<div class="slide">
+        		<span class="btn btn-info btn-small tooltip-info" data-rel="popover" data-placement="bottom" title="Some Info" data-content=" photo is uploading to server.">Download</span>
+          		<img src="http://farm9.staticflickr.com/8061/8237246833_54d8fa37f0_z.jpg" />
+        	</div>
+			<div class="nav">
+				<label for="img-3" class="prev">&#x2039;</label>
+				<label for="img-5" class="next">&#x203a;</label>
+			</div>
+    	</li>
 
-													<li>
-														<i class="icon-ok green"></i>
-														NETBANKING
-													</li>
+    <input type="radio" name="radio-btn" id="img-5" />
+    	<li class="slide-container">
+        	<div class="slide">
+        		<span class="btn btn-info btn-small tooltip-info" data-rel="popover" data-placement="bottom" title="Some Info" data-content=" photo is uploading to server.">Download</span>
+          		<img src="http://farm9.staticflickr.com/8055/8098750623_66292a35c0_z.jpg" />
+        	</div>
+			<div class="nav">
+				<label for="img-4" class="prev">&#x2039;</label>
+				<label for="img-6" class="next">&#x203a;</label>
+			</div>
+    	</li>
 
-																									</ul>
+    <input type="radio" name="radio-btn" id="img-6" />
+    	<li class="slide-container">
+        	<div class="slide">
+				<span class="btn btn-info btn-small tooltip-info" data-rel="popover" data-placement="bottom" title="Some Info" data-content=" photo is uploading to server.">Download</span>
+          		<img src="http://farm9.staticflickr.com/8195/8098750703_797e102da2_z.jpg" />
+        	</div>
+			<div class="nav">
+				<label for="img-5" class="prev">&#x2039;</label>
+				<label for="img-1" class="next">&#x203a;</label>
+			</div>
+    	</li>
+-->
+<%
+String driverName = "com.mysql.jdbc.Driver";
+String url = "jdbc:mysql://localhost:3306/PhotoApp";
+String userName = "root";
+String password = "mysql";
+	 int count=0;
+     Connection con = null;
+     Class.forName(driverName);
+     con = DriverManager.getConnection(url,userName,password);
+   //  Statement st = con.createStatement();
+     PreparedStatement pre2 = con.prepareStatement("SELECT count(*) FROM photos p INNER JOIN user u ON p.user_id=u.user_id where u.username='gravitejaa'");
+     PreparedStatement pre1 = con.prepareStatement("SELECT photo_id FROM photos p INNER JOIN user u ON p.user_id=u.user_id where u.username='gravitejaa'");
+	 ResultSet rs1=pre1.executeQuery();
+	 ResultSet rs2=pre2.executeQuery();
+	 if(rs2.next())
+	 {
+		 count=rs2.getInt(1);
+	 }
+	 while (rs1.next()) {
+		    ArrayList<Integer> z = new ArrayList<Integer>(count);
+		    z.add(rs1.getInt(1));
+		    
+		    int b,a;
+		    for (int i = 0; i < z.size(); i++) { %>
+		    <input type="radio" name="radio-btn" id="img-<%= i %>"/>
+    		<li class="slide-container">
+        		<div class="slide">
+					<span class="btn btn-info btn-small tooltip-info" data-rel="popover" data-placement="bottom" title="Some Info" data-content=" photo is uploading to server.">Download</span>
+            <!--  	<img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Pleiades_large.jpg" /> --> 
+          			<img src="/App/DisplayImage?ID=<%=z.get(i)%>">
+        		</div>
+				<div class="nav">
+				<% 
+				if(i == 0)
+					{
+						b=count-1;
+					}
+				else
+				{
+					b=i-1;
+				}
+				if(i == count-1)
+				{
+					a=0;
+				}
+				else
+				{
+					a=i+1;
+				}
+					
+					%>
+					<label for="img-<%= b %>" class="prev">&#x2039;</label>
+					<label for="img-<%= a %>" class="next">&#x203a;</label>
+				</div>
+    		</li>
+    		<%}
+	 }%>
 
-												
-												
-											</div>
 
-											<div>
-												<a href="#" class="btn btn-block btn-primary">
-													<span>UP COMING</span>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
+<li class="nav-dots">
 
-								<div class="span3">
-									<div class="widget-box pricing-box">
-										<div class="widget-header header-color-green">
-											<h5 class="bigger lighter">TRANSFER AMOUNT</h5>
-										</div>
+	<%	    for (int j = 0; j < count; j++) { %>
+		    <label for="img-<%= j %>" class="nav-dot" id="img-dot-<%= j %>"></label>
+		    <% 
+		    }  %>   	      		
+ </li>
+ </ul>
 
-										<div class="widget-body">
-											<div class="widget-main">
-												<ul class="unstyled spaced2">
-													<div class="control-group">
-													<label class="control-label" for="form-field-1">USER ID</label>
 
-														<div class="controls">
-															<input type="text" id="form-field-1" placeholder="" />
-									 					</div>
-													</div>
-													<div class="control-group">
-													<label class="control-label" for="form-field-1">USER NAME</label>
 
-														<div class="controls">
-															<input type="text" id="form-field-1" placeholder="" />
-									 					</div>
-													</div>
-													<div class="control-group">
-													<label class="control-label" for="form-field-1">AMOUNT</label>
 
-														<div class="controls">
-															<input type="text" id="form-field-1" placeholder="" />
-									 					</div>
-													</div>
-													
 
-						
-												</ul>
 
-												
-												
-											</div>
 
-											<div>
-												<a href="#" class="btn btn-block btn-success">
-													<span>NEXT</span>
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 
-											</div><!--/.page-content-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 				<div class="ace-settings-container" id="ace-settings-container">
 					<div class="btn btn-app btn-mini btn-warning ace-settings-btn" id="ace-settings-btn">
@@ -659,243 +695,6 @@
 			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
 		</script>
 
-<script type="text/javascript">
-$(function(){
-	<script type="text/javascript">
-	$(function() {
-	
-		$('#accordion2').on('hide', function (e) {
-			$(e.target).prev().children(0).addClass('collapsed');
-		})
-		$('#accordion2').on('hidden', function (e) {
-			$(e.target).prev().children(0).addClass('collapsed');
-		})
-		$('#accordion2').on('show', function (e) {
-			$(e.target).prev().children(0).removeClass('collapsed');
-		})
-		$('#accordion2').on('shown', function (e) {
-			$(e.target).prev().children(0).removeClass('collapsed');
-		})
-	
-	
-		var oldie = /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase());
-		$('.easy-pie-chart.percentage').each(function(){
-			$(this).easyPieChart({
-				barColor: $(this).data('color'),
-				trackColor: '#EEEEEE',
-				scaleColor: false,
-				lineCap: 'butt',
-				lineWidth: 8,
-				animate: oldie ? false : 1000,
-				size:75
-			}).css('color', $(this).data('color'));
-		});
-	
-		$('[data-rel=tooltip]').tooltip();
-		$('[data-rel=popover]').popover({html:true});
-	
-	
-		$('#gritter-regular').on(ace.click_event, function(){
-			$.gritter.add({
-				title: 'This is a regular notice!',
-				text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="blue">magnis dis parturient</a> montes, nascetur ridiculus mus.',
-				image: $assets+'/avatars/avatar1.png',
-				sticky: false,
-				time: '',
-				class_name: (!$('#gritter-light').get(0).checked ? 'gritter-light' : '')
-			});
-	
-			return false;
-		});
-	
-		$('#gritter-sticky').on(ace.click_event, function(){
-			var unique_id = $.gritter.add({
-				title: 'This is a sticky notice!',
-				text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="red">magnis dis parturient</a> montes, nascetur ridiculus mus.',
-				image: $assets+'/avatars/avatar.png',
-				sticky: true,
-				time: '',
-				class_name: 'gritter-info' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
-			});
-	
-			return false;
-		});
-	
-	
-		$('#gritter-without-image').on(ace.click_event, function(){
-			$.gritter.add({
-				// (string | mandatory) the heading of the notification
-				title: 'This is a notice without an image!',
-				// (string | mandatory) the text inside the notification
-				text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="orange">magnis dis parturient</a> montes, nascetur ridiculus mus.',
-				class_name: 'gritter-success' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
-			});
-	
-			return false;
-		});
-	
-	
-		$('#gritter-max3').on(ace.click_event, function(){
-			$.gritter.add({
-				title: 'This is a notice with a max of 3 on screen at one time!',
-				text: 'This will fade out after a certain amount of time. Vivamus eget tincidunt velit. Cum sociis natoque penatibus et <a href="#" class="green">magnis dis parturient</a> montes, nascetur ridiculus mus.',
-				image: $assets+'/avatars/avatar3.png',
-				sticky: false,
-				before_open: function(){
-					if($('.gritter-item-wrapper').length >= 3)
-					{
-						return false;
-					}
-				},
-				class_name: 'gritter-warning' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
-			});
-	
-			return false;
-		});
-	
-	
-		$('#gritter-center').on(ace.click_event, function(){
-			$.gritter.add({
-				title: 'This is a centered notification',
-				text: 'Just add a "gritter-center" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
-				class_name: 'gritter-info gritter-center' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
-			});
-	
-			return false;
-		});
-		
-		$('#gritter-error').on(ace.click_event, function(){
-			$.gritter.add({
-				title: 'This is a warning notification',
-				text: 'Just add a "gritter-light" class_name to your $.gritter.add or globally to $.gritter.options.class_name',
-				class_name: 'gritter-error' + (!$('#gritter-light').get(0).checked ? ' gritter-light' : '')
-			});
-	
-			return false;
-		});
-			
-	
-		$("#gritter-remove").on(ace.click_event, function(){
-			$.gritter.removeAll();
-			return false;
-		});
-			
-	
-		///////
-	
-	
-		$("#bootbox-regular").on(ace.click_event, function() {
-			bootbox.prompt("What is your name?", function(result) {
-				if (result === null) {
-					//Example.show("Prompt dismissed");
-				} else {
-					//Example.show("Hi <b>"+result+"</b>");
-				}
-			});
-		});
-			
-		$("#bootbox-confirm").on(ace.click_event, function() {
-			bootbox.confirm("Are you sure?", function(result) {
-				if(result) {
-					bootbox.alert("You are sure!");
-				}
-			});
-		});
-			
-		$("#bootbox-options").on(ace.click_event, function() {
-			bootbox.dialog("I am a custom dialog with smaller buttons", [{
-				"label" : "Success!",
-				"class" : "btn-small btn-success",
-				"callback": function() {
-					//Example.show("great success");
-				}
-				}, {
-				"label" : "Danger!",
-				"class" : "btn-small btn-danger",
-				"callback": function() {
-					//Example.show("uh oh, look out!");
-				}
-				}, {
-				"label" : "Click ME!",
-				"class" : "btn-small btn-primary",
-				"callback": function() {
-					//Example.show("Primary button");
-				}
-				}, {
-				"label" : "Just a button...",
-				"class" : "btn-small"
-				}]
-			);
-		});
-	
-	
-	
-		$('#spinner-opts small').css({display:'inline-block', width:'60px'})
-	
-		var slide_styles = ['', 'green','red','purple','orange', 'dark'];
-		var ii = 0;
-		$("#spinner-opts input[type=text]").each(function() {
-			var $this = $(this);
-			$this.hide().after('<span />');
-			$this.next().addClass('ui-slider-small').
-			addClass("inline ui-slider-"+slide_styles[ii++ % slide_styles.length]).
-			css({'width':'125px'}).slider({
-				value:parseInt($this.val()),
-				range: "min",
-				animate:true,
-				min: parseInt($this.data('min')),
-				max: parseInt($this.data('max')),
-				step: parseFloat($this.data('step')),
-				slide: function( event, ui ) {
-					$this.attr('value', ui.value);
-					spinner_update();
-				}
-			});
-		});
-	
-	
-	
-	
-	
-		$.fn.spin = function(opts) {
-			this.each(function() {
-			  var $this = $(this),
-				  data = $this.data();
-	
-			  if (data.spinner) {
-				data.spinner.stop();
-				delete data.spinner;
-			  }
-			  if (opts !== false) {
-				data.spinner = new Spinner($.extend({color: $this.css('color')}, opts)).spin(this);
-			  }
-			});
-			return this;
-		};
-	
-		function spinner_update() {
-			var opts = {};
-			$('#spinner-opts input[type=text]').each(function() {
-				opts[this.name] = parseFloat(this.value);
-			});
-			$('#spinner-preview').spin(opts);
-		}
-	
-	
-	
-		$('#id-pills-stacked').removeAttr('checked').on('click', function(){
-			$('.nav-pills').toggleClass('nav-stacked');
-		});
-	
-	
-	});
-</script>
-
-}
-</script>
-
-</script>
-
 		<!--<![endif]-->
 
 		<!--[if IE]>
@@ -911,11 +710,48 @@ $(function(){
 
 		<!--page specific plugin scripts-->
 
+		<script src="assets/js/jquery.colorbox-min.js"></script>
+
 		<!--ace scripts-->
 
 		<script src="assets/js/ace-elements.min.js"></script>
 		<script src="assets/js/ace.min.js"></script>
 
 		<!--inline scripts related to this page-->
-	</body>
+
+		<script type="text/javascript">
+			$(function() {
+	var colorbox_params = {
+		reposition:true,
+		scalePhotos:true,
+		scrolling:false,
+		previous:'<i class="icon-arrow-left"></i>',
+		next:'<i class="icon-arrow-right"></i>',
+		close:'&times;',
+		current:'{current} of {total}',
+		maxWidth:'100%',
+		maxHeight:'100%',
+		onOpen:function(){
+			document.body.style.overflow = 'hidden';
+		},
+		onClosed:function(){
+			document.body.style.overflow = 'auto';
+		},
+		onComplete:function(){
+			$.colorbox.resize();
+		}
+	};
+
+	$('.ace-thumbnails [data-rel="colorbox"]').colorbox(colorbox_params);
+	$("#cboxLoadingGraphic").append("<i class='icon-spinner orange'></i>");//let's add a custom loading icon
+
+	/**$(window).on('resize.colorbox', function() {
+		try {
+			//this function has been changed in recent versions of colorbox, so it won't work
+			$.fn.colorbox.load();//to redraw the current frame
+		} catch(e){}
+	});*/
+})
+		</script>
+</body>
 </html>

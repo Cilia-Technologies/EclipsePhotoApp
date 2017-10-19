@@ -72,7 +72,7 @@ public class DisplayImage extends HttpServlet {
 
         	try{
             	Class.forName("com.mysql.jdbc.Driver");
-            	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/PhotoApp", "root","mysql");
+            	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/PhotoApp", "root","password");
  //         stmt = conn.prepareStatement("select * from contacts where contact_id=" + imageId); 
             	stmt = conn.prepareStatement("select Actual_photo from photos");
  //           rs = stmt.executeQuery();

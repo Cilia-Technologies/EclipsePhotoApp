@@ -1,5 +1,7 @@
 package App;
 
+
+
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -22,6 +24,13 @@ import javax.servlet.http.Part;
 
 import org.imgscalr.Scalr;
 
+import java.awt.Color;
+import java.awt.Font;
+
+import net.coobird.thumbnailator.filters.Caption;
+import net.coobird.thumbnailator.geometry.Position;
+import net.coobird.thumbnailator.geometry.Positions;
+
 @WebServlet("/uploadServlet")
 @MultipartConfig(maxFileSize = 16177215)	// upload file's size up to 16MB
 public class FileUploadDBServlet extends HttpServlet {
@@ -29,7 +38,7 @@ public class FileUploadDBServlet extends HttpServlet {
 	// database connection settings
 	private String dbURL = "jdbc:mysql://localhost:3306/PhotoApp";
 	private String dbUser = "root";
-	private String dbPass = "mysql";
+	private String dbPass = "password";
 	
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
@@ -53,8 +62,19 @@ public class FileUploadDBServlet extends HttpServlet {
 		}
 		BufferedImage image= ImageIO.read(inputStream);
 		BufferedImage thumbnail = Scalr.resize(image, Scalr.Method.SPEED, Scalr.Mode.FIT_TO_WIDTH,150, 100, Scalr.OP_ANTIALIAS);
+//Watermark logic
+		String caption = "LANGOORLENS";
+		Font font = new Font("Monospaced", Font.PLAIN, 14);
+		Color c = Color.black;
+		Position position = Positions.CENTER;
+		int insetPixels = 0;
+		Caption filter = new Caption(caption, font, c, position, insetPixels);
+				
+		BufferedImage captionedImage = filter.apply(thumbnail);
+//Watermark logic ends here
+		
 		ByteArrayOutputStream os = new ByteArrayOutputStream();
-        ImageIO.write(thumbnail, "jpg", os);
+        ImageIO.write(captionedImage, "jpg", os);
         cropped_inputstream = new ByteArrayInputStream(os.toByteArray());
 		
 		Connection conn = null;	// connection to the database
@@ -79,7 +99,7 @@ public class FileUploadDBServlet extends HttpServlet {
 				String sql = "INSERT INTO photos (user_id,Actual_Photo,Cropped_Photo) values (?, ?, ?)";
 				PreparedStatement statement = conn.prepareStatement(sql);
 				statement.setInt(1, uid);
-				if (thumbnail !=null)
+				if (captionedImage !=null)
 				{
 					statement.setBlob(3, cropped_inputstream);
 				}

@@ -61,11 +61,34 @@ String suser = (String)sessionsa.getAttribute("USER");
 				<div class="container-fluid">
 					<a href="#" class="brand">
 						<small>
-							<i class="icon-leaf"></i>
-							PHOTO App
+						<i class="icon-leaf"></i>
+							LANG00RLENS
 						</small>
 					</a><!--/.brand-->
 
+				<ul class="nav ace-nav pull-right">
+					<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+<!-- 							<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />  -->
+								<span class="user-info">
+									<small>Welcome,</small>
+									Jason
+								</span>
+
+								<i class="icon-caret-down"></i>
+							</a>
+
+							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
+								<li>
+									<a href="<%=request.getContextPath()%>/LogoutServlet">
+										<i class="icon-off"></i>
+										Logout
+									</a>
+								</li>
+							</ul>
+					</li>
+				</ul><!--/.ace-nav-->
+					
 					
 				</div><!--/.container-fluid-->
 			</div><!--/.navbar-inner-->
@@ -108,41 +131,35 @@ String suser = (String)sessionsa.getAttribute("USER");
 				</div><!--#sidebar-shortcuts-->
 
 				<ul class="nav nav-list">
-<!--  				<li>
-						<a href="index.html">
-							<i class="icon-dashboard"></i>
-							<span class="menu-text"> Dashboard </span>
-						</a>
-					</li>
--->
-
-
 					<li class="active">
 						<a href="gallery.jsp">
 							<i class="icon-picture"></i>
 							<span class="menu-text"> Gallery </span>
 						</a>
 					</li>
+					
 
-					<li>
-						
-						<ul class="submenu">
-							<li>
+					
+							<li >
 								<a href="UserHomeServlet">
 									<i class="icon-double-angle-right"></i>
-									User Profile
-								</a>
-							</li>				
-
-							<li>
-								<a href="login.html">
-									<i class="icon-double-angle-right"></i>
-									Login &amp; Register
+									PROFILE
 								</a>
 							</li>
-						</ul>
-					</li>
 
+						   <li>
+								<a href="pricing.html">
+									<i class="icon-double-angle-right"></i>
+									RECHARGE
+								</a>
+							</li>
+					
+                     <li>
+						<a href="#">
+							<i class="icon-picture"></i>
+							<span class="menu-text"> FAQ </span>
+						</a>
+					</li>
 					
 				</ul><!--/.nav-list-->
 
@@ -168,22 +185,22 @@ String suser = (String)sessionsa.getAttribute("USER");
 				</div>
 
 				<div class="page-content">
-					<div class="page-header position-relative">
+<div class="page-header position-relative">
 						<h1>
-							Gallery
+							WALLET AMOUNT
 							<small>
-								<i class="icon-double-angle-right"></i>
-								 photo gallery to download
+								<i class="icon-double-angle-right">
+								 340.00</i>
+							  
 							</small>
 						</h1>
 					</div><!--/.page-header-->
+					
+														
+													
 
-					<div class="row-fluid">
-						<div class="span12">
-							<!--PAGE CONTENT BEGINS-->
-
-							
-				</div><!--/.page-content-->
+					
+	
 
 
 
@@ -214,15 +231,30 @@ try {
 <% for (i=0; i<=count; i++)
 { %>
 	
+		   
+		
     <input type="radio" name="radio-btn" id="img-<%= i %>" checked />
   	  <li class="slide-container">
-		<div class="slide">
-		    <span class="btn btn-info btn-small tooltip-info" data-rel="popover" data-placement="bottom" title="Some Info" data-content=" photo is uploading to server.">Click on Image to Download</span>
-			<a href="DownloadImage?DN=<%= photo.get(i) %>">
+  	  
+  	  		
+  	  
+		<div  class="slide">
+		
+				
+		    
+			<a href="downloadFileServlet?DN=<%= photo.get(i) %>">  
 			<img src="DisplayImage?ID=<%= photo.get(i) %>"/>
-			</a>			
+			</a>	
+			
+            <span style="width:175px;padding-bottom:3px;border-color: #edf2f6;" class="btn btn-info btn-small tooltip-info" onclick="DownloadImage?DN=<%= photo.get(i) %>" data-rel="popover" data-placement="bottom" title="Some Info" data-content=" photo is uploading to server.">TIME LEFT : <p  id="demo"></p></span>
+		    <span style="width:175px;border-color: #edf2f6" class="btn btn-info btn-small tooltip-info" onclick="DownloadImage?DN=<%= photo.get(i) %>" data-rel="popover" data-placement="bottom" title="Some Info" data-content=" photo is uploading to server.">PRICE : 32.00</span>
+			
+			<span style="width:175px;padding-bottom:3px;border-color: #edf2f6" class="btn btn-info btn-small tooltip-info" onclick="location.href='<%=request.getContextPath()%>/downloadFileServlet?DN=<%= photo.get(i) %>'" data-rel="popover" data-placement="bottom" icon="download" title="Some Info" data-content=" photo is uploading to server.">DOWNLOAD</span>		
         </div>
 		<div class="nav">
+		
+		     
+
 		<% 
 				if(i == 0)
 					{
@@ -259,14 +291,15 @@ try {
 
 
 
+</div>
+
+
+										
 
 
 
 				<div class="ace-settings-container" id="ace-settings-container">
-					<div class="btn btn-app btn-mini btn-warning ace-settings-btn" id="ace-settings-btn">
-						<i class="icon-cog bigger-150"></i>
-					</div>
-
+					
 					<div class="ace-settings-box" id="ace-settings-box">
 						<div>
 							<div class="pull-left">
@@ -384,5 +417,37 @@ try {
 	});*/
 })
 		</script>
+		
+		<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2018 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+		
 </body>
 </html>
